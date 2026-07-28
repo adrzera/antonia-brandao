@@ -392,7 +392,7 @@ const social = [
             sizes="(min-width: 900px) 620px, 92vw"
             alt="Escultura dourada sobre uma mesa de mármore"
             width="576"
-            height="472"
+            height="715"
             loading="lazy"
             decoding="async"
           />
@@ -1239,9 +1239,10 @@ const social = [
   }
 
   /* ── Chamada final ──────────────────────────────────────── */
+  /* sem padding embaixo: a base da mesa encosta no limite da seção */
   .final-cta {
     background: var(--c-bg-cta);
-    padding-block: clamp(3rem, 6vw, 5rem);
+    padding-top: clamp(3rem, 6vw, 5rem);
     text-align: center;
   }
   .final-title {

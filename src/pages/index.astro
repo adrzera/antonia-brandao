@@ -271,7 +271,8 @@ const social = [
         <div class="about-intro">
           <p class="eyebrow eyebrow-caps">Sobre mim</p>
           <h2 class="about-name">
-            <em>Olá</em>,<br />sou<br />Antônia<br />Brandão
+            {/* no mobile flui em 2 linhas; no desktop empilha palavra a palavra */}
+            <em>Olá</em>,<br class="brk-d" /> sou<br />Antônia<br class="brk-d" /> Brandão
           </h2>
           <p class="about-text">
             Sou psicóloga há mais de 12 anos, e o que me move é ver pessoas
@@ -1101,6 +1102,10 @@ const social = [
     font-family: var(--font-serif);
     font-size: 1.2em;
   }
+  /* quebras extras do título só entram no desktop */
+  .about-name :global(.brk-d) {
+    display: none;
+  }
   .about-text {
     font-size: clamp(0.875rem, 0.8rem + 0.3vw, 1.0625rem);
     line-height: 1.45;
@@ -1188,6 +1193,9 @@ const social = [
     .about-quote {
       grid-row: 1;
       padding-top: 2.5rem;
+    }
+    .about-name :global(.brk-d) {
+      display: inline;
     }
   }
 

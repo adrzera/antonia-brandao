@@ -1,0 +1,1406 @@
+---
+import Layout from "../layouts/Layout.astro";
+
+const whatsapp = "https://wa.me/5511991085421";
+const email = "antonia.brands@gmail.com";
+
+const services = [
+  {
+    id: "fases",
+    title: "Como posso te ajudar?",
+    text: "A terapia se adapta a você — não o contrário. Cada faixa etária tem suas próprias questões, e minha abordagem também.",
+    kicker: "Atendimento para <em>cada fase da vida</em>",
+    img: "banner-fases",
+    publico: "todas as fases da vida",
+    alt: "Pessoas de todas as idades, de bebês a idosos, em arcos coloridos",
+  },
+  {
+    id: "adultos",
+    title: "Adultos",
+    text: "Depressão, ansiedade, crises existenciais, relacionamentos difíceis ou simplesmente a sensação de que algo está fora do lugar. Trabalhamos juntos para trazer clareza e leveza de volta à sua vida.",
+    kicker: "Para quem já tem <em>muito na cabeça</em>",
+    img: "service-adultos",
+    publico: "adultos",
+    alt: "Pessoas adultas retratadas lado a lado em fundos coloridos",
+  },
+  {
+    id: "criancas",
+    title: "Crianças",
+    text: "Por meio de uma abordagem lúdica, ajudo crianças a expressarem emoções difíceis como agressividade, impulsividade, ou o impacto da separação dos pais.",
+    kicker: "Para quem ainda <em>não tem palavras</em> para o que sente",
+    img: "service-criancas",
+    publico: "crianças",
+    alt: "Crianças retratadas lado a lado em fundos coloridos",
+  },
+  {
+    id: "adolescentes",
+    title: "Adolescentes",
+    text: "A adolescência é intensa. Identificação, relacionamentos, ansiedade e depressão são parte dessa fase e, com o suporte certo, esse período pode ser de crescimento real.",
+    kicker: "Para quem está descobrindo <em>quem é</em>",
+    img: "service-adolescentes",
+    publico: "adolescentes",
+    alt: "Adolescentes retratados lado a lado em fundos coloridos",
+  },
+];
+
+const testimonials = [
+  {
+    quote:
+      "Estava num momento de incertezas e baixa autoestima. A Antônia me ajudou a enxergar tudo de um ângulo diferente. Foi um processo de autoconhecimento, redescobertas e recriação de mim mesma.",
+    author: "M. R. — Paciente",
+  },
+  {
+    quote:
+      "No auge da pandemia, quando minha vida desmoronou, ela me deu uma nova perspectiva. Hoje estou reconstruindo minha vida — e agradeço por ter colocado ela no meu caminho.",
+    author: "J. S. S. — Paciente",
+  },
+  {
+    quote:
+      "Através das sessões consegui compreender os objetivos da minha vida. Todas as consultas trouxeram resultados concretos. Estou muito grata.",
+    author: "D. B. F. — Paciente",
+  },
+];
+
+const faq = [
+  {
+    q: "Atende por convênio?",
+    a: "O atendimento é particular. Mas se o seu plano oferece reembolso, posso emitir os documentos necessários sem nenhum problema.",
+  },
+  {
+    q: "Faz atendimento online?",
+    a: "Sim! O atendimento online funciona muito bem e é tão eficaz quanto o presencial. Basta estar em um ambiente tranquilo e com privacidade.",
+  },
+  {
+    q: "Quais formas de pagamento aceita?",
+    a: "Aceito Pix e transferência bancária, realizados no momento do atendimento.",
+  },
+  {
+    q: "Como funciona a primeira sessão?",
+    a: "A primeira sessão é um espaço para você se apresentar, falar o que está sentindo e entender como funciona o processo terapêutico. Sem pressão, sem julgamento.",
+  },
+];
+
+// <b> marca os trechos em negrito, como no Figma
+const credentialsLeft = [
+  "Psicóloga formada desde <b>2013 (CRP 06/116557)</b>",
+  "Especialização em Psicologia Hospitalar — <b>Faculdade Albert Einstein</b>",
+  "Formação em PNL Sistêmica e <b>Hipnose Ericksoniana</b>",
+];
+
+const credentialsRight = [
+  "Life Coaching e Eneagrama das Personalidades",
+  "Formação em Psicanálise Contemporânea — <b>Dra. Andrea Vermont</b>",
+  "Membro da Associação Brasileira de Psicólogos Espíritas <b>(ABRAPE)</b>",
+];
+
+const addresses = [
+  {
+    text: "Rua Apeninos, 429, conj. 211 — Metrô Paraíso / Vergueiro, São Paulo",
+    map: "https://www.google.com/maps/place/R.+Apeninos,+429+-+Sl+211+-+Aclima%C3%A7%C3%A3o,+S%C3%A3o+Paulo+-+SP,+01533-000/@-23.5713252,-46.6388193,17z",
+  },
+  {
+    text: "Rua Teodoro Sampaio, 417, conj. 31 — Metrô Clínicas, São Paulo",
+    map: "https://www.google.com/maps/search/?api=1&query=Rua+Teodoro+Sampaio,+417,+conj.+31,+S%C3%A3o+Paulo",
+  },
+];
+
+const social = [
+  { label: "Instagram", url: "https://instagram.com/antoniasb18" },
+  { label: "Facebook", url: "https://www.facebook.com/antonia.brandao.90/" },
+];
+---
+
+<Layout>
+  <a class="skip" href="#conteudo">Pular para o conteúdo</a>
+
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a class="logo" href="#topo" aria-label="Antônia Brandão — página inicial">
+        <img src="/img/flourish-gold-177.webp" alt="" width="37" height="46" />
+        <img
+          class="logo-word"
+          src="/img/logo.svg"
+          alt="Antônia Brandão"
+          width="188"
+          height="40"
+        />
+      </a>
+      <!-- <details> dá o menu sanfona no mobile sem uma linha de JS -->
+      <details class="menu">
+        <summary aria-label="Abrir menu">
+          <span class="burger" aria-hidden="true"></span>
+        </summary>
+        <nav aria-label="Principal">
+          <a href="#atendimento">Atendimento</a>
+          <a href="#sobre">Sobre</a>
+          <a href="#contato">Contato</a>
+        </nav>
+      </details>
+    </div>
+  </header>
+
+  <main id="conteudo">
+    <!-- ── Hero ───────────────────────────────────────────── -->
+    <section class="hero" id="topo">
+      <div class="hero-stage">
+      <img
+        class="hero-scene"
+        src="/img/hero-1440.webp"
+        srcset="/img/hero-800.webp 800w, /img/hero-1440.webp 1440w, /img/hero-2160.webp 2160w"
+        sizes="100vw"
+        alt="Antônia Brandão sentada em uma poltrona, em um estúdio de paredes claras"
+        width="1440"
+        height="760"
+        fetchpriority="high"
+        decoding="async"
+      />
+
+      <div class="wrap hero-inner">
+        <h1 class="hero-title">
+          <span><em>Você</em> não precisa</span>
+          <span><em>carregar</em> isso sozinho.</span>
+        </h1>
+
+        <div class="hero-actions">
+          <a class="btn btn-glass" href={whatsapp} rel="noopener">
+            Agendar minha 1ª sessão
+          </a>
+          <a class="btn btn-glass" href={whatsapp} rel="noopener">
+            Quero conversar antes
+          </a>
+        </div>
+        <p class="hero-meta">Psicóloga · CRP 06/116557 · São Paulo</p>
+      </div>
+      </div>
+
+      <p class="wrap hero-note">
+        A terapia não é para quem está <span class="u">“quebrado”</span>.<br /><br
+        />É para quem já percebeu que algo pode mudar e quer entender por onde
+        começar.
+      </p>
+    </section>
+
+    <!-- ── Prova social ───────────────────────────────────── -->
+    <section class="reveal stats" aria-labelledby="stats-title">
+      <img
+        class="stats-bg"
+        src="/img/stats-bg-1400.webp"
+        srcset="/img/stats-bg-700.webp 700w, /img/stats-bg-1400.webp 1400w"
+        sizes="(min-width: 1440px) 1400px, 100vw"
+        alt=""
+        width="1400"
+        height="624"
+        loading="lazy"
+        decoding="async"
+      />
+      <div class="wrap">
+        <img
+          class="stats-flourish"
+          src="/img/flourish-gold-177.webp"
+          alt=""
+          width="110"
+          height="137"
+          loading="lazy"
+        />
+        <p class="stats-number" id="stats-title">100+</p>
+        <p class="stats-sub">
+          clientes atendidos nos últimos anos. Com histórias reais de
+          transformação
+        </p>
+
+        <ul class="testimonials">
+          {
+            testimonials.map((t) => (
+              <li>
+                <blockquote>
+                  <p>“{t.quote}”</p>
+                  <footer>{t.author}</footer>
+                </blockquote>
+              </li>
+            ))
+          }
+        </ul>
+      </div>
+    </section>
+
+    <!-- ── Atendimento ────────────────────────────────────── -->
+    <section class="reveal services" id="atendimento">
+      <div class="wrap">
+        {
+          services.map((s) => (
+            <article class="service" id={s.id}>
+              <p class="eyebrow" set:html={s.kicker} />
+              {/* a imagem inteira é a área de clique; o botão é o affordance */}
+              <a
+                class="service-media"
+                href={whatsapp}
+                rel="noopener"
+                aria-label={`Quero agendar uma sessão — ${s.publico}`}
+              >
+                <img
+                  src={`/img/${s.img}-1400.webp`}
+                  srcset={`/img/${s.img}-700.webp 700w, /img/${s.img}-1400.webp 1400w`}
+                  sizes="(min-width: 1440px) 1400px, 100vw"
+                  alt={s.alt}
+                  width="1400"
+                  height="717"
+                  loading="lazy"
+                  decoding="async"
+                />
+                <span class="btn btn-glass btn-over" aria-hidden="true">
+                  Quero agendar uma sessão
+                </span>
+              </a>
+              <div class="service-text">
+                {s.id === "fases" ? (
+                  <h2 class="section-title">{s.title}</h2>
+                ) : (
+                  <h3>{s.title}</h3>
+                )}
+                <p class="section-lead">{s.text}</p>
+              </div>
+            </article>
+          ))
+        }
+      </div>
+    </section>
+
+    <!-- ── Sobre ──────────────────────────────────────────── -->
+    <section class="reveal about" id="sobre">
+      <div class="wrap about-grid">
+        <div class="about-intro">
+          <p class="eyebrow eyebrow-caps">Sobre mim</p>
+          <h2 class="about-name">
+            <em>Olá</em>,<br />sou<br />Antônia<br />Brandão
+          </h2>
+          <p class="about-text">
+            Sou psicóloga há mais de 12 anos, e o que me move é ver pessoas
+            saindo da terapia mais leves, mais seguras de si mesmas e mais donas
+            de suas próprias histórias.
+          </p>
+        </div>
+
+        {/* os selos já vêm compostos na imagem — descritos no alt */}
+        <figure class="about-photo">
+          <img
+            src="/img/sobre-mim-630.webp"
+            srcset="/img/sobre-mim-630.webp 630w, /img/sobre-mim-1260.webp 1260w"
+            sizes="(min-width: 900px) 630px, 90vw"
+            alt="Antônia Brandão, psicóloga, sentada em uma poltrona de couro. Selos: mais de 12 anos de experiência, mais de 100 pacientes, mais de 15 anos de conhecimento."
+            width="630"
+            height="782"
+            loading="lazy"
+            decoding="async"
+          />
+        </figure>
+
+        <aside class="about-quote">
+          <blockquote>
+            <p>
+              Acredito que o autoconhecimento não é um luxo. É o caminho mais
+              honesto para uma vida que faça sentido para você.
+            </p>
+          </blockquote>
+          <img
+            src="/img/flourish-gold-177.webp"
+            alt=""
+            width="60"
+            height="75"
+            loading="lazy"
+          />
+        </aside>
+
+      </div>
+
+      <div class="credentials-band">
+        <div class="wrap credentials">
+          <ul>
+            {credentialsLeft.map((c) => <li set:html={c} />)}
+          </ul>
+          <ul>
+            {credentialsRight.map((c) => <li set:html={c} />)}
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Dúvidas ────────────────────────────────────────── -->
+    <section class="reveal faq" id="duvidas">
+      <div class="wrap faq-grid">
+        <div>
+          <p class="eyebrow">Dúvidas frequentes</p>
+          <h2 class="section-title">
+            Antes de marcar,<br />veja as respostas<br />mais comuns.
+          </h2>
+        </div>
+        <div class="faq-list">
+          {
+            faq.map((item, i) => (
+              <details open={i === 0}>
+                <summary>
+                  {item.q}
+                  <svg
+                    class="chevron"
+                    viewBox="0 0 14 8"
+                    aria-hidden="true"
+                    focusable="false"
+                  >
+                    <path
+                      d="M1 1l6 6 6-6"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="1.2"
+                    />
+                  </svg>
+                </summary>
+                <p>{item.a}</p>
+              </details>
+            ))
+          }
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Chamada final ──────────────────────────────────── -->
+    <section class="reveal final-cta">
+      <div class="wrap">
+        <h2 class="section-title final-title">
+          O primeiro passo é o mais difícil.<br />E também o mais importante.
+        </h2>
+        <p class="final-note">
+          Se você chegou até aqui, algo dentro de você já está pronto para
+          mudar. Vamos conversar?
+        </p>
+        {/* botão como imagem; o alt dá o nome acessível ao link */}
+        <a class="btn-img" href={whatsapp} rel="noopener">
+          <img
+            src="/img/btn-1passo-408.webp"
+            srcset="/img/btn-1passo-408.webp 408w, /img/btn-1passo-816.webp 816w"
+            sizes="408px"
+            alt="Agendar minha sessão pelo WhatsApp"
+            width="408"
+            height="63"
+            loading="lazy"
+            decoding="async"
+          />
+        </a>
+
+        <div class="final-media">
+          <img
+            src="/img/mesa-576.webp"
+            srcset="/img/mesa-576.webp 576w, /img/mesa-1152.webp 1152w"
+            sizes="(min-width: 900px) 620px, 92vw"
+            alt="Escultura dourada sobre uma mesa de mármore"
+            width="576"
+            height="472"
+            loading="lazy"
+            decoding="async"
+          />
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Contato ────────────────────────────────────────── -->
+    <section class="reveal contact" id="contato">
+      <div class="wrap contact-grid">
+        <div>
+          <h2 class="contact-label">Contato</h2>
+          <a class="contact-link" href={`mailto:${email}`}>{email}</a>
+        </div>
+        <div class="contact-right">
+          <h2 class="contact-label">WhatsApp</h2>
+          <a class="contact-link" href={whatsapp} rel="noopener">
+            (11) 99108-5421
+          </a>
+        </div>
+      </div>
+
+      {/* mapa interativo do consultório da Rua Apeninos, em preto e branco */}
+      <div class="contact-map">
+        <iframe
+          title="Mapa — Rua Apeninos, 429, Aclimação, São Paulo"
+          src="https://www.google.com/maps/embed?pb=!1m2!2m1!1sR.+Apeninos,+429,+Aclima%C3%A7%C3%A3o,+S%C3%A3o+Paulo,+01533-000"
+          width="1024"
+          height="440"
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          style="border:0"
+        ></iframe>
+        {/* pin da marca sobreposto no centro (ponto do endereço) */}
+        <img
+          class="contact-pin"
+          src="/img/pin-gmap-40.webp"
+          srcset="/img/pin-gmap-40.webp 40w, /img/pin-gmap-80.webp 80w"
+          sizes="40px"
+          alt=""
+          width="40"
+          height="54"
+          loading="lazy"
+          decoding="async"
+        />
+      </div>
+
+      <ul class="addresses wrap">
+        {
+          addresses.map((a) => (
+            <li>
+              <img src="/img/pin.svg" alt="" width="19" height="26" loading="lazy" />
+              <a href={a.map} rel="noopener noreferrer" target="_blank">
+                {a.text}
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap footer-inner">
+      <a class="logo" href="#topo" aria-label="Antônia Brandão — topo da página">
+        <img src="/img/flourish-gold-177.webp" alt="" width="44" height="55" />
+        <img
+          class="logo-word"
+          src="/img/logo.svg"
+          alt="Antônia Brandão"
+          width="188"
+          height="40"
+        />
+      </a>
+
+      <nav class="footer-nav" aria-label="Redes sociais">
+        {
+          social.map((s) => (
+            <a href={s.url} rel="noopener noreferrer" target="_blank">
+              {s.label}
+            </a>
+          ))
+        }
+        <a class="to-top" href="#topo">
+          Up
+          <svg viewBox="0 0 14 8" aria-hidden="true" focusable="false">
+            <path
+              d="M1 7l6-6 6 6"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.2"></path>
+          </svg>
+        </a>
+      </nav>
+
+      <img
+        class="footer-seal"
+        src="/img/selo-180.webp"
+        srcset="/img/selo-180.webp 180w, /img/selo-360.webp 360w"
+        sizes="120px"
+        alt="© 2026 — Antônia Brandão · Contato"
+        width="180"
+        height="178"
+        loading="lazy"
+        decoding="async"
+      />
+    </div>
+  </footer>
+</Layout>
+
+<script>
+  // Progressive enhancement: sem JS, tudo aparece normalmente (a classe
+  // .js só é adicionada quando há JS). Respeita quem prefere menos movimento.
+  const reduz = matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const alvos = document.querySelectorAll(".reveal");
+  if (reduz || !("IntersectionObserver" in window)) {
+    alvos.forEach((el) => el.classList.add("is-visible"));
+  } else {
+    const io = new IntersectionObserver(
+      (entries, obs) => {
+        for (const e of entries) {
+          if (e.isIntersecting) {
+            e.target.classList.add("is-visible");
+            obs.unobserve(e.target);
+          }
+        }
+      },
+      { rootMargin: "0px 0px -12% 0px", threshold: 0.1 },
+    );
+    alvos.forEach((el) => io.observe(el));
+  }
+
+  // Menu mobile: fecha ao escolher um item ou apertar Esc.
+  const menu = document.querySelector(".menu");
+  if (menu) {
+    menu.querySelectorAll("nav a").forEach((a) =>
+      a.addEventListener("click", () => menu.removeAttribute("open")),
+    );
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape") menu.removeAttribute("open");
+    });
+  }
+</script>
+
+<style>
+  /* ── Animações de entrada ───────────────────────────────── */
+  /* :global(.js) porque a classe fica no <html>, fora do escopo do componente */
+  :global(.js) .reveal {
+    opacity: 0;
+    transform: translateY(24px);
+    transition:
+      opacity 0.7s ease,
+      transform 0.7s ease;
+    will-change: opacity, transform;
+  }
+  :global(.js) .reveal.is-visible {
+    opacity: 1;
+    transform: none;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    :global(.js) .reveal {
+      opacity: 1;
+      transform: none;
+      transition: none;
+    }
+  }
+
+  /* ── Primitivos ─────────────────────────────────────────── */
+  .wrap {
+    width: 100%;
+    max-width: var(--wrap);
+    margin-inline: auto;
+    padding-inline: var(--gutter);
+  }
+
+  .skip {
+    position: absolute;
+    left: -9999px;
+    top: 0;
+    z-index: 100;
+    background: #fff;
+    padding: 0.75rem 1rem;
+  }
+  .skip:focus {
+    left: 0;
+  }
+
+  .eyebrow {
+    font-size: clamp(1.125rem, 0.95rem + 0.8vw, 1.625rem);
+    line-height: 1.3;
+    margin-bottom: 0.75rem;
+  }
+  .eyebrow :global(em) {
+    font-family: var(--font-serif);
+    font-size: 1.15em;
+  }
+
+  .section-title {
+    font-size: var(--step-h2);
+  }
+
+  .section-lead {
+    font-size: var(--step-lead);
+    font-weight: 300;
+    line-height: 1.35;
+    max-width: 62ch;
+    color: var(--c-muted);
+  }
+
+  .u {
+    text-decoration: underline;
+    text-underline-offset: 0.15em;
+  }
+
+  /* ── Botões ─────────────────────────────────────────────── */
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6em;
+    border-radius: 999px;
+    padding: 0.85em 1.75em;
+    font-size: clamp(0.9375rem, 0.85rem + 0.35vw, 1.1875rem);
+    letter-spacing: -0.03em;
+    line-height: 1.2;
+    text-decoration: none;
+    transition:
+      background-color 0.2s,
+      color 0.2s,
+      border-color 0.2s;
+  }
+  /* seta diagonal ↗ (mask para herdar a cor do texto) */
+  .btn::after {
+    content: "";
+    width: 0.62em;
+    height: 0.62em;
+    flex: none;
+    background: currentColor;
+    mask: var(--arrow) center / contain no-repeat;
+    -webkit-mask: var(--arrow) center / contain no-repeat;
+  }
+  /* Glass: fundo transparente com blur do que está atrás e borda
+     em gradiente (branca no topo, some para baixo) — como no Figma. */
+  .btn-glass {
+    position: relative;
+    color: #fff;
+    background: rgba(255, 255, 255, 0.12);
+    backdrop-filter: blur(30px) saturate(1.15) brightness(1.06);
+    -webkit-backdrop-filter: blur(30px) saturate(1.15) brightness(1.06);
+    transition: background-color 0.25s;
+  }
+  .btn-glass::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    padding: 1px;
+    background: linear-gradient(
+      to bottom,
+      rgba(255, 255, 255, 0.95),
+      rgba(255, 255, 255, 0.25) 45%,
+      rgba(255, 255, 255, 0.08)
+    );
+    mask:
+      linear-gradient(#000 0 0) content-box,
+      linear-gradient(#000 0 0);
+    mask-composite: exclude;
+    -webkit-mask:
+      linear-gradient(#000 0 0) content-box,
+      linear-gradient(#000 0 0);
+    -webkit-mask-composite: xor;
+    pointer-events: none;
+  }
+  .btn-glass:hover {
+    background: rgba(255, 255, 255, 0.16);
+  }
+  .btn-over {
+    position: absolute;
+    left: 50%;
+    bottom: clamp(1rem, 3vw, 2.5rem);
+    transform: translateX(-50%);
+    white-space: nowrap;
+  }
+  .btn-gold {
+    color: var(--c-gold);
+  }
+  .btn-gold::before {
+    background: linear-gradient(
+      to bottom,
+      rgba(181, 142, 74, 0.95),
+      rgba(181, 142, 74, 0.3) 45%,
+      rgba(181, 142, 74, 0.1)
+    );
+  }
+  .btn-gold :global(em) {
+    font-family: var(--font-serif);
+    font-size: 1.15em;
+  }
+  .btn-gold:hover {
+    background: rgba(181, 142, 74, 0.18);
+  }
+
+  /* ── Cabeçalho ──────────────────────────────────────────── */
+  /* Flutua sobre a cena do hero (que já traz o branco do topo),
+     assim a cabeça pode invadir a faixa do menu. */
+  /* Fica sempre visível; o conteúdo rola por baixo. */
+  .site-header {
+    position: sticky;
+    top: 0;
+    z-index: 20;
+    background: #fff;
+  }
+  .header-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.5rem;
+    min-height: 5rem;
+  }
+  .logo {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    text-decoration: none;
+  }
+  .logo img:first-child {
+    width: clamp(28px, 2.6vw, 37px);
+    height: auto;
+  }
+  .logo-word {
+    width: clamp(140px, 13vw, 187px);
+    height: auto;
+  }
+  .site-header nav {
+    display: flex;
+    gap: clamp(1rem, 2.5vw, 2.75rem);
+    font-size: clamp(0.9375rem, 0.85rem + 0.35vw, 1.25rem);
+  }
+  .site-header nav a {
+    text-decoration: none;
+  }
+  .site-header nav a:hover {
+    text-decoration: underline;
+    text-underline-offset: 0.3em;
+  }
+
+  /* No desktop o <details> é só um invólucro: o menu fica sempre visível,
+     mesmo fechado (o navegador esconderia o conteúdo por padrão). */
+  .menu > summary {
+    display: none;
+  }
+  .menu::details-content {
+    content-visibility: visible;
+    block-size: auto;
+  }
+  .burger {
+    display: block;
+    width: 26px;
+    height: 2px;
+    background: currentColor;
+    position: relative;
+  }
+  .burger::before,
+  .burger::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: currentColor;
+  }
+  .burger::before {
+    top: -8px;
+  }
+  .burger::after {
+    top: 8px;
+  }
+
+  @media (max-width: 767px) {
+    .menu > summary {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      min-height: 2.75rem;
+      padding-left: 1rem;
+      cursor: pointer;
+      list-style: none;
+    }
+    .menu > summary::-webkit-details-marker {
+      display: none;
+    }
+    .menu[open] > summary .burger {
+      background: transparent;
+    }
+    .menu[open] > summary .burger::before {
+      top: 0;
+      transform: rotate(45deg);
+    }
+    .menu[open] > summary .burger::after {
+      top: 0;
+      transform: rotate(-45deg);
+    }
+    .menu:not([open]) nav {
+      display: none;
+    }
+    .site-header nav {
+      position: absolute;
+      inset: 100% 0 auto 0;
+      flex-direction: column;
+      gap: 0;
+      background: #fff;
+      border-top: 1px solid var(--c-line);
+      padding: 0.5rem var(--gutter) 1rem;
+    }
+    .site-header nav a {
+      padding-block: 0.75rem;
+    }
+  }
+
+  /* ── Hero ───────────────────────────────────────────────── */
+  /* A cena (estúdio + retrato) é o fundo; textos e botões ficam por cima. */
+  .hero {
+    position: relative;
+    background: #f0efed;
+    isolation: isolate;
+  }
+  /* âncora do overlay: só a área da imagem */
+  .hero-stage {
+    position: relative;
+  }
+  /* A cena inclui a faixa do topo: a cabeça passa por cima do menu,
+     como no Figma, em vez de ser cortada por ele. */
+  .hero-scene {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1440 / 760;
+    object-fit: cover;
+    object-position: center top;
+  }
+  .hero-inner {
+    position: absolute;
+    inset: 0;
+    display: grid;
+    grid-template-columns: 1fr minmax(0, 34%) 1fr;
+    grid-template-rows: auto 1fr auto;
+    row-gap: clamp(0.75rem, 3vw, 2rem);
+    padding-top: clamp(1.25rem, 9vw, 8.5rem);
+    pointer-events: none;
+  }
+  .hero-inner :global(a) {
+    pointer-events: auto;
+  }
+  .hero-title {
+    grid-column: 1 / -1;
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    flex-wrap: wrap;
+    width: min(100%, 1100px);
+    margin-inline: auto 0;
+    font-size: var(--step-hero);
+    letter-spacing: -0.025em;
+  }
+  .hero-title :global(em) {
+    font-family: var(--font-serif);
+    font-size: 1.25em;
+    line-height: 0.9;
+  }
+  /* Desktop: sobre a cena, à direita, na altura do Figma. */
+  .hero-note {
+    position: absolute;
+    top: 33%;
+    right: clamp(1rem, 17vw, 251px);
+    width: 21ch;
+    font-size: clamp(0.8125rem, 0.78rem + 0.2vw, 0.9375rem);
+    line-height: 1.35;
+  }
+  .hero-actions {
+    grid-column: 1 / -1;
+    grid-row: 2;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-self: center;
+    gap: clamp(0.75rem, 2vw, 1.5rem);
+  }
+  /* fica sobre a imagem, no rodapé da cena */
+  .hero-meta {
+    grid-column: 1 / -1;
+    align-self: end;
+    font-size: 0.9375rem;
+    color: var(--c-ink);
+    padding-bottom: clamp(1rem, 3vw, 2.25rem);
+  }
+
+  /* Mobile: título curto em duas colunas sobre a foto; o parágrafo
+     sai de cima da imagem e vai para baixo, centralizado. */
+  @media (max-width: 899px) {
+    .hero-scene {
+      aspect-ratio: 3 / 4;
+    }
+    .hero-inner {
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: auto 1fr auto;
+      padding-inline: var(--gutter);
+      row-gap: 0;
+    }
+    .hero-title {
+      width: 100%;
+      margin-inline: 0;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0 1rem;
+      font-size: clamp(1.0625rem, 4.6vw, 1.5rem);
+      letter-spacing: -0.01em;
+      line-height: 1.15;
+    }
+    .hero-title :global(em) {
+      font-size: 1.1em;
+    }
+    .hero-title span:last-child {
+      text-align: right;
+    }
+    .hero-actions {
+      grid-column: 1 / -1;
+      grid-row: 2;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      align-self: center;
+      width: 100%;
+    }
+    .hero-actions .btn {
+      width: min(100%, 320px);
+      justify-content: center;
+    }
+    .hero-meta {
+      text-align: center;
+    }
+    /* fora da imagem, abaixo dela */
+    .hero-note {
+      position: static;
+      width: auto;
+      max-width: 42ch;
+      margin-inline: auto;
+      padding: clamp(1.25rem, 5vw, 2rem) var(--gutter);
+      text-align: center;
+    }
+  }
+
+  /* ── Prova social ───────────────────────────────────────── */
+  /* Fundo: a própria foto do hero desfocada, com cantos arredondados. */
+  .stats {
+    position: relative;
+    isolation: isolate;
+    color: #fff;
+    text-align: center;
+    padding: clamp(3rem, 7vw, 6rem) 0;
+    margin-inline: var(--gutter);
+  }
+  .stats-bg {
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: clamp(12px, 1.5vw, 20px);
+  }
+  .stats-flourish {
+    width: clamp(64px, 7vw, 110px);
+    height: auto;
+    margin-inline: auto;
+  }
+  .stats-number {
+    font-size: var(--step-display);
+    line-height: 1;
+    letter-spacing: -0.02em;
+    margin-top: 0.5rem;
+  }
+  .stats-sub {
+    font-size: var(--step-h3);
+    line-height: 1.2;
+    max-width: 24ch;
+    margin: 0.75rem auto 0;
+  }
+  .testimonials {
+    list-style: none;
+    padding: 0;
+    margin-top: clamp(2rem, 4vw, 3rem);
+    border-top: 1px solid var(--c-line-light);
+    padding-top: clamp(2rem, 4vw, 3rem);
+    display: grid;
+    gap: 2rem;
+  }
+  .testimonials li {
+    display: flex;
+  }
+  .testimonials blockquote {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+  }
+  .testimonials blockquote p {
+    font-family: var(--font-serif);
+    font-style: italic;
+    font-size: clamp(1rem, 0.9rem + 0.45vw, 1.2rem);
+    line-height: 1.35;
+  }
+  .testimonials blockquote footer {
+    margin-top: auto;
+    padding-top: 1.5rem;
+    font-family: var(--font-sans);
+    font-style: normal;
+    font-size: 1rem;
+  }
+  @media (min-width: 900px) {
+    .testimonials {
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0;
+    }
+    .testimonials li + li {
+      border-left: 1px solid var(--c-line-light);
+    }
+    .testimonials li {
+      padding-inline: clamp(1rem, 2.5vw, 2.5rem);
+    }
+  }
+
+  /* ── Atendimento ────────────────────────────────────────── */
+  /* Cada bloco: chapéu → imagem → (título | texto) → divisória */
+  .services {
+    padding-block: clamp(2rem, 5vw, 4rem);
+  }
+  .service + .service {
+    border-top: 1px solid var(--c-line);
+    margin-top: clamp(2rem, 4vw, 3rem);
+    padding-top: clamp(1.5rem, 3vw, 2.5rem);
+  }
+  .service .eyebrow {
+    margin-bottom: clamp(0.75rem, 2vw, 1.25rem);
+  }
+  .service-media {
+    position: relative;
+    display: block;
+    text-decoration: none;
+  }
+  /* o hover/foco da imagem inteira acende o botão */
+  .service-media:hover .btn-glass,
+  .service-media:focus-visible .btn-glass {
+    background: rgba(255, 255, 255, 0.26);
+  }
+  .service-media:focus-visible {
+    outline: 2px solid var(--c-ink);
+    outline-offset: 3px;
+  }
+  .service-media img {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 3 / 1;
+    object-fit: cover;
+  }
+  .service-text {
+    display: grid;
+    gap: 0.5rem 3rem;
+    margin-top: clamp(0.75rem, 2vw, 1.25rem);
+  }
+  .service-text h3 {
+    font-size: var(--step-h3);
+  }
+  .service-text .section-lead {
+    max-width: 72ch;
+  }
+  @media (min-width: 900px) {
+    .service-text {
+      grid-template-columns: minmax(0, 1fr) minmax(0, 2fr);
+      align-items: start;
+    }
+  }
+  @media (max-width: 599px) {
+    .service-media img {
+      aspect-ratio: 4 / 3;
+    }
+  }
+
+  /* ── Sobre ──────────────────────────────────────────────── */
+  .about {
+    background: var(--c-bg-alt);
+    padding-top: clamp(2.5rem, 5vw, 4rem);
+  }
+  .about-grid {
+    display: grid;
+    gap: clamp(2rem, 4vw, 3rem);
+  }
+  .eyebrow-caps {
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    font-size: clamp(0.6875rem, 0.66rem + 0.1vw, 0.8125rem);
+  }
+  .about-name {
+    font-size: clamp(2.25rem, 1.4rem + 3.2vw, 4.25rem);
+    line-height: 1.05;
+    letter-spacing: -0.04em;
+    margin-block: 0.5rem 1.5rem;
+  }
+  .about-name :global(em) {
+    font-family: var(--font-serif);
+    font-size: 1.2em;
+  }
+  .about-text {
+    font-size: clamp(0.875rem, 0.8rem + 0.3vw, 1.0625rem);
+    line-height: 1.45;
+    max-width: 26ch;
+  }
+  .about-photo {
+    margin: 0;
+    position: relative;
+  }
+  .about-photo img {
+    width: 100%;
+    height: auto;
+  }
+  /* aspas grandes no topo, texto, símbolo dourado embaixo */
+  .about-quote {
+    text-align: center;
+  }
+  .about-quote blockquote {
+    margin: 0;
+  }
+  .about-quote blockquote::before {
+    content: "“";
+    display: block;
+    font-family: var(--font-serif);
+    font-size: clamp(2.5rem, 2rem + 2vw, 4.25rem);
+    line-height: 0.6;
+    margin-bottom: 0.35em;
+  }
+  .about-quote blockquote p {
+    font-family: var(--font-serif);
+    font-style: italic;
+    font-size: clamp(0.9375rem, 0.85rem + 0.45vw, 1.25rem);
+    line-height: 1.35;
+    max-width: 28ch;
+    margin-inline: auto;
+  }
+  .about-quote img {
+    width: clamp(38px, 3.4vw, 52px);
+    height: auto;
+    margin: clamp(0.75rem, 2vw, 1.5rem) auto 0;
+  }
+  /* faixa própria, mais clara, abaixo da foto — como no Figma */
+  .credentials-band {
+    background: #efefed;
+    padding-block: clamp(1.5rem, 3vw, 2.5rem);
+  }
+  .credentials {
+    display: grid;
+    gap: 1rem 4rem;
+    max-width: 62rem;
+    font-size: clamp(0.75rem, 0.72rem + 0.15vw, 0.8125rem);
+    font-weight: 300;
+    line-height: 1.6;
+    color: var(--c-muted);
+  }
+  .credentials :global(b) {
+    font-weight: 700;
+    color: var(--c-ink);
+  }
+  .credentials ul {
+    list-style: none;
+    padding: 0;
+    display: grid;
+    gap: 0.35rem;
+  }
+  @media (min-width: 700px) {
+    .credentials {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+  @media (min-width: 1000px) {
+    /* coluna central larga: a foto ocupa o máximo possível */
+    .about-grid {
+      grid-template-columns: minmax(0, 0.8fr) minmax(0, 2.1fr) minmax(0, 1fr);
+      align-items: start;
+      column-gap: clamp(1rem, 2vw, 2rem);
+    }
+    .about-intro {
+      grid-row: 1;
+      padding-top: 1rem;
+    }
+    .about-photo {
+      grid-row: 1;
+    }
+    .about-quote {
+      grid-row: 1;
+      padding-top: 2.5rem;
+    }
+  }
+
+  /* ── Dúvidas ────────────────────────────────────────────── */
+  .faq {
+    background: var(--c-bg-faq);
+    padding-block: clamp(3rem, 6vw, 5rem);
+  }
+  .faq-grid {
+    display: grid;
+    gap: clamp(2rem, 4vw, 3.5rem);
+  }
+  @media (min-width: 900px) {
+    .faq-grid {
+      grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
+    }
+  }
+  .faq details {
+    border-bottom: 1px solid var(--c-line);
+  }
+  .faq summary {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.5rem;
+    padding-block: 1.25rem;
+    cursor: pointer;
+    list-style: none;
+    font-size: clamp(1rem, 0.9rem + 0.4vw, 1.25rem);
+  }
+  .faq summary::-webkit-details-marker {
+    display: none;
+  }
+  .chevron {
+    width: 14px;
+    height: 8px;
+    flex: none;
+    transition: transform 0.2s;
+  }
+  .faq details[open] .chevron {
+    transform: rotate(180deg);
+  }
+  .faq details p {
+    padding-bottom: 1.5rem;
+    max-width: 62ch;
+    font-size: clamp(0.8125rem, 0.78rem + 0.15vw, 0.9375rem);
+    font-weight: 300;
+    color: var(--c-muted);
+  }
+
+  /* ── Chamada final ──────────────────────────────────────── */
+  .final-cta {
+    background: var(--c-bg-cta);
+    padding-block: clamp(3rem, 6vw, 5rem);
+    text-align: center;
+  }
+  .final-title {
+    /* largura suficiente para cada frase caber em uma linha */
+    max-width: 34ch;
+    margin-inline: auto;
+    font-size: clamp(1.5rem, 1rem + 2.1vw, 2.75rem);
+    line-height: 1.2;
+  }
+  .final-note {
+    font-size: clamp(0.8125rem, 0.78rem + 0.15vw, 0.9375rem);
+    color: var(--c-muted);
+    margin-top: 1.5rem;
+  }
+  /* botão como imagem, acima da mesa — hover leve em opacidade */
+  .btn-img {
+    display: inline-block;
+    margin-top: clamp(1.5rem, 3vw, 2.25rem);
+    transition: opacity 0.25s;
+    border-radius: 999px;
+  }
+  .btn-img img {
+    width: min(408px, 88vw);
+    height: auto;
+  }
+  .btn-img:hover,
+  .btn-img:focus-visible {
+    opacity: 0.82;
+  }
+  .btn-img:focus-visible {
+    outline: 2px solid var(--c-gold);
+    outline-offset: 4px;
+  }
+  .final-media {
+    max-width: clamp(300px, 46vw, 620px);
+    margin: clamp(1.5rem, 3vw, 2.5rem) auto 0;
+  }
+  .final-media img {
+    width: 100%;
+    height: auto;
+  }
+
+  /* ── Contato ────────────────────────────────────────────── */
+  .contact {
+    background: #f3f3f3;
+    padding-bottom: clamp(2rem, 4vw, 3rem);
+  }
+  .contact-grid {
+    display: grid;
+    gap: 2rem;
+    padding-block: clamp(2rem, 5vw, 4rem);
+  }
+  @media (min-width: 700px) {
+    .contact-grid {
+      grid-template-columns: 1fr 1fr;
+    }
+    .contact-right {
+      text-align: right;
+    }
+  }
+  .contact-label {
+    font-size: clamp(1.375rem, 1.1rem + 1vw, 1.875rem);
+    letter-spacing: -0.04em;
+  }
+  .contact-link {
+    font-size: clamp(1.375rem, 1.1rem + 1vw, 1.875rem);
+    letter-spacing: -0.04em;
+    text-underline-offset: 0.12em;
+    word-break: break-word;
+  }
+  .contact-map {
+    position: relative;
+    width: 100%;
+    height: clamp(260px, 34vw, 440px);
+    overflow: hidden;
+  }
+  .contact-map iframe {
+    width: 100%;
+    height: 100%;
+    display: block;
+    /* preto e branco, como na referência And Walsh */
+    filter: grayscale(1) contrast(1.05);
+  }
+  /* pin da marca com a ponta no centro do mapa; não bloqueia o arraste */
+  .contact-pin {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: clamp(34px, 3.5vw, 44px);
+    height: auto;
+    transform: translate(-50%, -100%);
+    pointer-events: none;
+    filter: drop-shadow(0 3px 6px rgba(0, 0, 0, 0.35));
+  }
+  .addresses {
+    list-style: none;
+    display: grid;
+    gap: 0;
+    margin-top: 0;
+  }
+  .addresses li {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding-block: 1.25rem;
+    border-bottom: 1px solid var(--c-line);
+    font-size: clamp(0.9375rem, 0.85rem + 0.35vw, 1.25rem);
+    letter-spacing: -0.03em;
+  }
+  .addresses img {
+    width: 19px;
+    height: auto;
+    flex: none;
+  }
+  .addresses a {
+    text-decoration: none;
+  }
+  .addresses a:hover {
+    text-decoration: underline;
+    text-underline-offset: 0.25em;
+  }
+
+  /* ── Rodapé ─────────────────────────────────────────────── */
+  .site-footer {
+    background: #f3f3f3;
+    padding-block: clamp(2rem, 4vw, 3rem);
+  }
+  .footer-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 1.5rem 2rem;
+  }
+  .footer-nav {
+    display: flex;
+    align-items: center;
+    gap: clamp(1rem, 3vw, 2.5rem);
+    font-size: clamp(1.25rem, 1rem + 1vw, 2.1875rem);
+    letter-spacing: -0.045em;
+  }
+  .footer-nav a {
+    text-decoration: none;
+  }
+  .footer-nav a:hover {
+    text-decoration: underline;
+    text-underline-offset: 0.15em;
+  }
+  .to-top {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4em;
+  }
+  .to-top svg {
+    width: 0.5em;
+    height: auto;
+  }
+  .footer-seal {
+    width: clamp(88px, 9vw, 128px);
+    height: auto;
+  }
+</style>

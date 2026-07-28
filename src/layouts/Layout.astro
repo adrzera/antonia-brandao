@@ -1,0 +1,61 @@
+---
+import "../styles/global.css";
+
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const {
+  title = "Antônia Brandão — Psicóloga em São Paulo | CRP 06/116557",
+  description = "Psicóloga há mais de 10 anos em São Paulo. Terapia para adultos, crianças e adolescentes, presencial e online. Agende sua primeira sessão.",
+} = Astro.props;
+
+// Só emite canonical absoluto quando `site` estiver definido no astro.config.
+const canonical = Astro.site
+  ? new URL(Astro.url.pathname, Astro.site)
+  : undefined;
+---
+
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link
+      rel="preload"
+      href="/fonts/maison-neue-book.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      as="image"
+      type="image/webp"
+      href="/img/hero-1440.webp"
+      imagesrcset="/img/hero-800.webp 800w, /img/hero-1440.webp 1440w, /img/hero-2160.webp 2160w"
+      imagesizes="100vw"
+      fetchpriority="high"
+    />
+    {canonical && <link rel="canonical" href={canonical} />}
+    <meta name="generator" content={Astro.generator} />
+
+    <title>{title}</title>
+    <meta name="description" content={description} />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="pt_BR" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    {canonical && <meta property="og:url" content={canonical} />}
+    {/* marca JS ativo antes do paint — evita flash no fade-in de entrada */}
+    <script is:inline>
+      document.documentElement.classList.add("js");
+    </script>
+  </head>
+  <body>
+    <slot />
+  </body>
+</html>

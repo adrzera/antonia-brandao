@@ -143,17 +143,35 @@ const social = [
     <!-- ── Hero ───────────────────────────────────────────── -->
     <section class="hero" id="topo">
       <div class="hero-stage">
-      <img
-        class="hero-scene"
-        src="/img/hero-1440.webp"
-        srcset="/img/hero-800.webp 800w, /img/hero-1440.webp 1440w, /img/hero-2160.webp 2160w"
-        sizes="100vw"
-        alt="Antônia Brandão sentada em uma poltrona, em um estúdio de paredes claras"
-        width="1440"
-        height="760"
-        fetchpriority="high"
-        decoding="async"
-      />
+      {/* desktop: foto sem botões (botões vêm em HTML por cima).
+          mobile: foto com os botões já embutidos na imagem. */}
+      <picture>
+        <source
+          media="(max-width: 899px)"
+          srcset="/img/hero-mobile-587.webp 587w, /img/hero-mobile-1174.webp 1174w"
+          sizes="100vw"
+          width="587"
+          height="629"
+        />
+        <img
+          class="hero-scene"
+          src="/img/hero-1440.webp"
+          srcset="/img/hero-800.webp 800w, /img/hero-1440.webp 1440w, /img/hero-2160.webp 2160w"
+          sizes="100vw"
+          alt="Antônia Brandão sentada em uma poltrona, em um estúdio de paredes claras"
+          width="1440"
+          height="946"
+          fetchpriority="high"
+          decoding="async"
+        />
+      </picture>
+
+      {/* no mobile, torna clicáveis os botões desenhados na imagem */}
+      <a
+        class="hero-tap"
+        href={whatsapp}
+        rel="noopener"
+        aria-label="Agendar minha sessão pelo WhatsApp"></a>
 
       <div class="wrap hero-inner">
         <h1 class="hero-title">
@@ -816,19 +834,25 @@ const social = [
   /* A cena (estúdio + retrato) é o fundo; textos e botões ficam por cima. */
   .hero {
     position: relative;
-    background: #f0efed;
+    /* casa com o fundo do estúdio para o topo transparente da foto
+       não deixar emenda visível */
+    background: #e3e2e0;
     isolation: isolate;
   }
   /* âncora do overlay: só a área da imagem */
   .hero-stage {
     position: relative;
   }
+  /* link invisível sobre os botões desenhados na imagem (só mobile) */
+  .hero-tap {
+    display: none;
+  }
   /* A cena inclui a faixa do topo: a cabeça passa por cima do menu,
      como no Figma, em vez de ser cortada por ele. */
   .hero-scene {
     width: 100%;
     height: auto;
-    aspect-ratio: 1440 / 760;
+    aspect-ratio: 1440 / 946;
     object-fit: cover;
     object-position: center top;
   }
@@ -892,7 +916,19 @@ const social = [
      sai de cima da imagem e vai para baixo, centralizado. */
   @media (max-width: 899px) {
     .hero-scene {
-      aspect-ratio: 3 / 4;
+      aspect-ratio: 587 / 629;
+    }
+    /* os botões já vêm na imagem: some com os HTML e ativa o toque */
+    .hero-actions {
+      display: none;
+    }
+    .hero-tap {
+      display: block;
+      position: absolute;
+      left: 8%;
+      right: 8%;
+      top: 34%;
+      height: 30%;
     }
     .hero-inner {
       grid-template-columns: 1fr 1fr;

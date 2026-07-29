@@ -175,8 +175,7 @@ const social = [
 
       <div class="wrap hero-inner">
         <h1 class="hero-title">
-          <span><em>Você</em> não precisa</span>
-          <span><em>carregar</em> isso sozinho.</span>
+          <em>Você</em> não<br />precisa <em>carregar</em><br />isso sozinho.
         </h1>
 
         <div class="hero-actions">
@@ -870,15 +869,15 @@ const social = [
   .hero-inner :global(a) {
     pointer-events: auto;
   }
+  /* Desktop: empilhado à esquerda, na altura dos ombros. */
   .hero-title {
-    grid-column: 1 / -1;
-    display: flex;
-    justify-content: space-between;
-    gap: 1rem;
-    flex-wrap: wrap;
-    width: min(100%, 1100px);
-    margin-inline: auto 0;
+    position: absolute;
+    left: 0;
+    top: 24%;
+    max-width: 42%;
+    text-align: left;
     font-size: var(--step-hero);
+    line-height: 1.06;
     letter-spacing: -0.025em;
   }
   .hero-title :global(em) {
@@ -907,6 +906,7 @@ const social = [
   /* fica sobre a imagem, no rodapé da cena */
   .hero-meta {
     grid-column: 1 / -1;
+    grid-row: 3;
     align-self: end;
     font-size: 0.9375rem;
     color: var(--c-ink);
@@ -937,21 +937,18 @@ const social = [
       padding-inline: var(--gutter);
       row-gap: 0;
     }
+    /* mobile: empilhado à esquerda, no topo, sobre a foto */
     .hero-title {
-      width: 100%;
-      margin-inline: 0;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 0 1rem;
-      font-size: clamp(1.0625rem, 4.6vw, 1.5rem);
-      letter-spacing: -0.01em;
-      line-height: 1.15;
+      position: static;
+      max-width: none;
+      grid-column: 1 / -1;
+      text-align: left;
+      font-size: clamp(1.375rem, 6.5vw, 2rem);
+      letter-spacing: -0.02em;
+      line-height: 1.12;
     }
     .hero-title :global(em) {
-      font-size: 1.1em;
-    }
-    .hero-title span:last-child {
-      text-align: right;
+      font-size: 1.05em;
     }
     .hero-actions {
       grid-column: 1 / -1;

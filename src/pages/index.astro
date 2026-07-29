@@ -260,13 +260,10 @@ const social = [
                   sizes="(min-width: 1440px) 1400px, 100vw"
                   alt={s.alt}
                   width="1400"
-                  height="717"
+                  height="467"
                   loading="lazy"
                   decoding="async"
                 />
-                <span class="btn btn-glass btn-over" aria-hidden="true">
-                  Quero agendar uma sessão
-                </span>
               </a>
               <div class="service-text">
                 {s.id === "fases" ? (
@@ -1069,15 +1066,17 @@ const social = [
   .service .eyebrow {
     margin-bottom: clamp(0.75rem, 2vw, 1.25rem);
   }
+  /* o botão vem embutido na imagem; a imagem inteira é o link,
+     com leve fade no hover (igual ao botão do CTA) */
   .service-media {
     position: relative;
     display: block;
     text-decoration: none;
+    transition: opacity 0.25s;
   }
-  /* o hover/foco da imagem inteira acende o botão */
-  .service-media:hover .btn-glass,
-  .service-media:focus-visible .btn-glass {
-    background: rgba(255, 255, 255, 0.26);
+  .service-media:hover,
+  .service-media:focus-visible {
+    opacity: 0.82;
   }
   .service-media:focus-visible {
     outline: 2px solid var(--c-ink);
@@ -1088,7 +1087,7 @@ const social = [
   .service-media img {
     width: 100%;
     height: auto;
-    aspect-ratio: 1400 / 717;
+    aspect-ratio: 1400 / 467;
     object-fit: cover;
     object-position: center;
   }
